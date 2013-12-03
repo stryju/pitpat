@@ -1,0 +1,10 @@
+{
+  "name": "pitpat",
+  "version": "0.0.0",
+  "author": "tomasz stryjewski",
+  "dependencies": {
+    "angular": "~1",
+    "requirejs": "~2.1",
+    "requirejs-domready": "~2.0"
+  }
+}

@@ -1,0 +1,11 @@
+.idea
+.sass-cache
+node_modules
+*.sublime-*
+.tern-port
+.grunt
+_SpecRunner.html
+.DS_Store
+assets/scripts/vendor
+public/scripts/
+public/styles/
