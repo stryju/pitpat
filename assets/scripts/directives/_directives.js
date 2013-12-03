@@ -8,7 +8,7 @@ define([
 ], function ( ng, todos, todo ) {
   'use strict';
 
-  return ng.module( 'directives', [])
+  return ng.module( 'directives', [] )
     .directive( 'todos', todos )
     .directive( 'todo', todo );
 });

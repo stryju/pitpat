@@ -11,7 +11,9 @@ define( function () {
     return {
       restrict   : 'E',
       transclude : true,
-      scope      : {},
+      scope      : {
+        title : '@'
+      },
       controller : function ( $scope ) {
       // controller: function ( $scope, $element ) {
         var todos = $scope.todos = [];
