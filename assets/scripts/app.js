@@ -7,6 +7,9 @@ define([
 ], function( ng ){
   'use strict';
 
-  ng.module( 'pitpat', [ 'directives' ] );
-  ng.bootstrap( document, [ 'pitpat' ] );
+  ng.element( document )
+    .ready(function() {
+      ng.module( 'pitpat', [ 'directives' ] );
+      ng.bootstrap( document, [ 'pitpat' ] );
+    });
 });

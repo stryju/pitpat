@@ -4,13 +4,40 @@
   <meta charset="UTF-8">
   <title></title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+  <style>
+@charset "UTF-8";
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .ng-hide { display: none !important }
+ng\:form { display: block }
+.ng-animate-start { border-spacing:1px 1px; -ms-zoom:1.0001 }
+.ng-animate-active { border-spacing:0px 0px; -ms-zoom:1 }
+</style>
   <link rel="stylesheet" href="styles/foundation.css">
-  <!-- <script src="scripts/vendor/angular/angular.min.js"></script> -->
+  <style>
 
-<body>
-  <todos title="MY TODOS">
-    <todo>Do the dishes</todo>
-    <todo>Do the laundry</todo>
-    <todo done="done">Be awesome</todo>
-  </todos>
+.is\:done {
+  text-decoration: line-through;
+}
+
+  </style>
   <script data-main="scripts/boot" src="scripts/vendor/requirejs/require.js"></script>
+
+<body ng-cloak>
+  <div class="row">
+    <div class="column large-4">
+      <h1>
+        pitpat, yo!
+      </h1>
+    </div>
+
+    <todos title="MY TODOS" class="column large-4" todos="fooooo">
+      <todo>Do the dishes</todo>
+      <todo>Do the laundry</todo>
+      <todo done>Be awesome</todo>
+    </todos>
+
+    <todos title="MY TODOS 2" class="column large-4">
+      <todo>Do the dishes</todo>
+    </todos>
+
+  </div>
+

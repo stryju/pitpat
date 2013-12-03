@@ -11,32 +11,33 @@ define( function () {
     return {
       restrict   : 'E',
       transclude : true,
+      // replace    : true,
       scope      : {
-        title : '@'
+        title : '@',
+        todos : '='
       },
       controller : function ( $scope ) {
-      // controller: function ( $scope, $element ) {
-        var todos = $scope.todos = [];
-
-        // $scope.select = function(todo) {
-        //   angular.forEach(todos, function(todo) {
-        //     todo.selected = false;
-        //   });
-        //   todo.selected = true;
-        // };
+        // $scope.todos = [];
 
         this.addTodo = function ( todo ) {
-          todos.push( todo );
+        //   $scope.todos.push( todo );
+          console.log( $scope.todos );
         };
       },
       template :
         '<section class="todos">' +
           '<h1>{{title}}</h1>' +
           '<ul class="todos-list" ng-transclude>' +
-            '<todo ng-repeat="todo in todos" />' +
           '</ul>' +
-        '</section>',
-      replace : true
+          '<form class="row collapse" ng-submit="addTodo()">' +
+            '<div class="column small-9">' +
+              '<input type="text" />' +
+            '</div>' +
+            '<div class="column small-3">' +
+              '<button type="submit" class="button postfix">+</button>' +
+            '</div>' +
+          '</form>' +
+        '</section>'
     };
   };
 });
