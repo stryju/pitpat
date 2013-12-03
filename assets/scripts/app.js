@@ -8,7 +8,6 @@ define([
 ], function( ng ){
   'use strict';
 
-  var app = ng.module( 'pitpat', [ 'directives' ] );
-
-  console.log( app );
+  ng.module( 'pitpat', [ 'directives' ] );
+  ng.bootstrap( document, [ 'pitpat' ] );
 });
