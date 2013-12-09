@@ -20,8 +20,9 @@ define( function () {
         app.todos = data;
       });
 
-    // app.addTodo = function ( todo ) {
-    //   app.todos.push( todo );
-    // };
+    app.addTodo = function ( todo ) {
+      console.log( 'adding todo', todo );
+      app.todos.push( todo );
+    };
   };
 });
