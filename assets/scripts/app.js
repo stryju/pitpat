@@ -3,13 +3,25 @@
 */
 define([
   'angular',
-  'directives/_directives'
-], function( ng ){
+  'text!templates/pages/dashboard.html',
+  'angular-kendo-ui',
+  '_controllers',
+  '_directives'
+], function( ng, dashboardTemplate ){
   'use strict';
 
-  ng.element( document )
-    .ready(function() {
-      ng.module( 'pitpat', [ 'directives' ] );
-      ng.bootstrap( document, [ 'pitpat' ] );
-    });
+  return ng.module( 'pitpat', [
+    'kendo.directives',
+    'controllers',
+    'directives'
+  ]).config( function ( $routeProvider ) {
+    $routeProvider
+      .when( '/', {
+        template: dashboardTemplate
+      })
+      .otherwise({
+        redirectTo: '/'
+      });
+  });
+
 });

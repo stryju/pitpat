@@ -6,38 +6,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
   <style>
 @charset "UTF-8";
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .ng-hide { display: none !important }
+[ng-cloak],
+.ng-cloak,
+.ng-hide { display: none !important }
 ng\:form { display: block }
 .ng-animate-start { border-spacing:1px 1px; -ms-zoom:1.0001 }
 .ng-animate-active { border-spacing:0px 0px; -ms-zoom:1 }
 </style>
   <link rel="stylesheet" href="styles/foundation.css">
-  <style>
+  <link rel="stylesheet" href="styles/pitpat.css">
+  <script data-main="scripts/boot" src="scripts/vendor/require.js"></script>
 
-.is\:done {
-  text-decoration: line-through;
-}
+<body ng-cloak ng-controller="PitPatCtrl as pitpat">
+  <div class="off-canvas-wrap">
+    <div class="inner-wrap">
+      <nav class="tab-bar">
+        <section class="left-small">
+          <a class="left-off-canvas-toggle menu-icon" ><span></span></a>
+        </section>
+        <section class="middle tab-bar-section">
+          <h1 class="title">PitPat</h1>
+        </section>
+      </nav>
 
-  </style>
-  <script data-main="scripts/boot" src="scripts/vendor/requirejs/require.js"></script>
+      <main ng-view>
+      </main>
 
-<body ng-cloak>
-  <div class="row">
-    <div class="column large-4">
-      <h1>
-        pitpat, yo!
-      </h1>
+      <aside class="left-off-canvas-menu">
+        <ul class="off-canvas-list">
+          <!-- <li><label>Foundation</label> -->
+          <li><a href="#">Dashboard</a>
+          <li><a href="#">My Performance</a>
+          <li><a href="#">Giving Feedback</a>
+          <li><a href="#">Team Insights</a>
+          <li><a href="#">Analytics &amp; Reports</a>
+        </ul>
+      </aside>
     </div>
-
-    <todos title="MY TODOS" class="column large-4" todos="fooooo">
-      <todo>Do the dishes</todo>
-      <todo>Do the laundry</todo>
-      <todo done>Be awesome</todo>
-    </todos>
-
-    <todos title="MY TODOS 2" class="column large-4">
-      <todo>Do the dishes</todo>
-    </todos>
-
   </div>
 
+  <script>
+  </script>

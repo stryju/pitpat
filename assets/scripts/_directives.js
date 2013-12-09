@@ -3,12 +3,12 @@
 */
 define([
   'angular',
-  './todos/todos',
-  './todos/todo'
-], function ( ng, todos, todo ) {
+  'directives/todos',
+  'directives/alerts'
+], function ( ng, todos, alerts ) {
   'use strict';
 
   return ng.module( 'directives', [] )
     .directive( 'todos', todos )
-    .directive( 'todo', todo );
+    .directive( 'alerts', alerts );
 });

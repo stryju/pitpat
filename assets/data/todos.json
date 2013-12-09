@@ -1,0 +1,14 @@
+[
+  {
+    "label" : "do this",
+    "done" : false
+  },
+  {
+    "label" : "do that",
+    "done" : false
+  },
+  {
+    "label" : "been there, done that",
+    "done" : true
+  }
+]
