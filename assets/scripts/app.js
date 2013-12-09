@@ -23,8 +23,8 @@ define([
     });
 
     $routeProvider.otherwise({
-        redirectTo: '/'
-      });
+      redirectTo: '/'
+    });
   }]);
 
 });

@@ -51,6 +51,6 @@ require.config({
     foundation         : 'vendor/foundation',
     jquery             : 'vendor/jquery',
     'kendo-ui'         : 'vendor/kendo.web.min',
-    'lodash'           : 'vendor/lodash'
+    lodash             : 'vendor/lodash'
   }
 });
