@@ -1,14 +1,17 @@
 [
   {
     "label" : "do this",
-    "done" : false
+    "done" : false,
+    "expires" : "2013-12-29"
   },
   {
     "label" : "do that",
-    "done" : false
+    "done" : false,
+    "expires" : false
   },
   {
     "label" : "been there, done that",
-    "done" : true
+    "done" : true,
+    "expires" : "2013-11-31"
   }
 ]

@@ -27,6 +27,13 @@ module.exports = function ( grunt ) {
         dest    : '<%= dirs.src %>/scripts/vendor'
       },
 
+      kendo_styles : {
+        expand  : true,
+        cwd     : '<%= dirs.bower %>/kendo-ui/styles',
+        src     : '**/*.*',
+        dest    : '<%= dirs.dist %>/styles/kendo'
+      },
+
       images : {
         expand : true,
         cwd    : '<%= dirs.src %>/images',

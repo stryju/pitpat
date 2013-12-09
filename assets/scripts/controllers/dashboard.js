@@ -8,16 +8,11 @@ define( function () {
   return function ( $http ) {
     var app = this;
 
-    app.todos  = [];
+    app.alerts = [];
 
-    $http.get( '/data/user.json' )
+    $http.get( '/data/alerts.json' )
       .success( function ( data ) {
-        app.user = data;
-      });
-
-    $http.get( '/data/todos.json' )
-      .success( function ( data ) {
-        app.todos = data;
+        app.alerts = data;
       });
 
     // app.addTodo = function ( todo ) {

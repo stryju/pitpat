@@ -1,5 +1,6 @@
 /* global
-  define: false
+  define: false,
+  console: false
 */
 define([
   'lodash',
@@ -9,22 +10,33 @@ define([
   'angular.kendo-ui',
   '_controllers',
   '_directives',
+  '_filters'
 ], function( _, ng, router ){
   'use strict';
 
-  return ng.module( 'pitpat', [
-    'ngRoute',
-    'kendo.directives',
-    'controllers',
-    'directives'
-  ]).config([ '$routeProvider', function ( $routeProvider ) {
-    _.each( router, function ( view, route ) {
-      $routeProvider.when( route, view );
-    });
+  return ng
+    // define module with dependencies for deferred loading
+    .module( 'pitpat', [
+      'ngRoute',
+      'kendo.directives',
+      'controllers',
+      'directives',
+      'filters'
+    ])
+    // setup routing
+    .config([ '$routeProvider', function ( $routeProvider ) {
+      _.each( router, function ( view, route ) {
+        $routeProvider.when( route, view );
+      });
 
-    $routeProvider.otherwise({
-      redirectTo: '/'
+      $routeProvider.otherwise({
+        redirectTo: '/'
+      });
+    }])
+    // log the routing
+    .run( function( $rootScope ) {
+      $rootScope.$on( '$routeChangeSuccess', function ( to, from ) {
+        console.log( 'route change', from, to );
+      });
     });
-  }]);
-
 });

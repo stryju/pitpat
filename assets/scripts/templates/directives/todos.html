@@ -1,21 +1,33 @@
 <section class="todos">
-  <h1>{{title}}</h1>
-  <ul class="todos-list">
-    <li ng-repeat="todo in todos">
-      <label>
-        <input type="checkbox" ng-model="todo.done">
-        <span class="todo-label">
-          {{todo.label}}
-        </span>
-      </label>
-  </ul>
-  <form class="row collapse" ng-submit="addTodo(newTodo)">
-    <div class="column small-9">
-      <input type="text" ng-model="newTodo.label">
-      <input type="hidden" ng-model="newTodo.done">
-    </div>
-    <div class="column small-3">
-      <button type="submit" class="button postfix">+</button>
-    </div>
-  </form>
+  <div class="panel">
+    <h5>{{title}}</h5>
+    <ul class="todos-list">
+      <li ng-repeat="todo in todos">
+        <label>
+          <input type="checkbox" ng-model="todo.done">
+          <span class="todo-label">
+            {{todo.label}}
+          </span>
+          <span ng-if="todo.expires" class="label right">
+            {{todo.expires|timeLeft}}
+          </span>
+        </label>
+    </ul>
+
+    <hr>
+
+    <form class="row collapse" ng-submit="addTodo(newTodo)">
+      <div class="column small-9">
+        <input type="text" ng-model="newTodo.label" placeholder="new todo..." required>
+      </div>
+
+      <div class="column small-3">
+        <button type="submit" class="button postfix">+</button>
+      </div>
+
+      <div class="column">
+        <input type="text" ng-model="newTodo.expires" placeholder="does it expire?" kendo-date-picker>
+      </div>
+    </form>
+  </div>
 </section>
