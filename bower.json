@@ -4,10 +4,16 @@
   "author": "tomasz stryjewski",
   "dependencies": {
     "angular": "~1",
+    "lodash": ">=2.4.0",
+    "angular-route": "*",
     "requirejs": "~2.1",
-    "jquery": "~2",
-    "foundation" : ">=5.0.0",
-    "kendo-ui" : "*",
-    "angular-kendo-ui" : "*"
+    "jquery": "*",
+    "foundation": ">=5.0.0",
+    "kendo-ui": "*",
+    "angular-kendo-ui": "*"
+  },
+  "resolutions": {
+    "angular": ">=1.2.4",
+    "jquery": ">= 2.0.0"
   }
 }

@@ -16,9 +16,11 @@ module.exports = function ( grunt ) {
         cwd     : '<%= dirs.bower %>',
         src     : [
           'requirejs/require.js',
+          'lodash/dist/lodash.{js,min.js}',
           'jquery/jquery.*',
           'foundation/js/foundation.*',
           'angular/angular.*',
+          'angular-route/angular-route.*',
           'kendo-ui/js/kendo.web.*',
           'angular-kendo-ui/build/angular-kendo.*'
         ],

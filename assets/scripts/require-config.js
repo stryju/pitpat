@@ -9,8 +9,18 @@ require.config({
       exports : '$'
     },
 
+    lodash : {
+      exports : '_'
+    },
+
     angular : {
       exports : 'angular'
+    },
+
+    'angular.route' : {
+      deps : [
+        'angular'
+      ]
     },
 
     'kendo-ui' : {
@@ -19,7 +29,7 @@ require.config({
       ]
     },
 
-    'angular-kendo-ui' : {
+    'angular.kendo-ui' : {
       deps : [
         'kendo-ui',
         'angular'
@@ -36,9 +46,11 @@ require.config({
 
   paths : {
     angular            : 'vendor/angular',
-    jquery             : 'vendor/jquery',
+    'angular.route'    : 'vendor/angular-route',
+    'angular.kendo-ui' : 'vendor/angular-kendo',
     foundation         : 'vendor/foundation',
+    jquery             : 'vendor/jquery',
     'kendo-ui'         : 'vendor/kendo.web.min',
-    'angular-kendo-ui' : 'vendor/angular-kendo'
+    'lodash'           : 'vendor/lodash'
   }
 });
