@@ -2,27 +2,44 @@
   define: false,
   console: false
 */
-define( function () {
+define([
+  '_router'
+], function ( router ) {
   'use strict';
 
-  return function ( $http ) {
-    var app = this;
+  return [
+    '$scope',
+    '$http',
+    '$location',
 
-    app.todos  = [];
+    function ( $scope, $http, $location ) {
+      var app = this;
 
-    $http.get( '/data/user.json' )
-      .success( function ( data ) {
-        app.user = data;
-      });
+      app.todos  = [];
+      app.router = router;
 
-    $http.get( '/data/todos.json' )
-      .success( function ( data ) {
-        app.todos = data;
-      });
+      $http.get( '/data/user.json' )
+        .success( function ( data ) {
+          app.user = data;
+        });
 
-    app.addTodo = function ( todo ) {
-      console.log( 'adding todo', todo );
-      app.todos.push( todo );
-    };
-  };
+      $http.get( '/data/todos.json' )
+        .success( function ( data ) {
+          app.todos = data;
+        });
+
+      app.addTodo = function ( todo ) {
+        console.log( 'adding todo', todo );
+        app.todos.push( todo );
+      };
+
+      app.currentRoute = function( path, klass ) {
+        if ( $location.path().substr( 0, path.length ) === path) {
+          return klass;
+        }
+
+        return '';
+      };
+    }
+  ];
 });

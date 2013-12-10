@@ -25,12 +25,12 @@ define([
     ])
     // setup routing
     .config([ '$routeProvider', function ( $routeProvider ) {
-      _.each( router, function ( view, route ) {
-        $routeProvider.when( route, view );
+      _.each( router, function ( route ) {
+        $routeProvider.when( route.route, route );
       });
 
       $routeProvider.otherwise({
-        redirectTo: '/'
+        redirectTo: _.first( router ).route
       });
     }])
     // log the routing

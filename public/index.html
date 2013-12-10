@@ -36,12 +36,8 @@ ng\:form { display: block }
 
       <aside class="left-off-canvas-menu">
         <ul class="off-canvas-list">
-          <!-- <li><label>Foundation</label> -->
-          <li><a href="#">Dashboard</a>
-          <li><a href="#">My Performance</a>
-          <li><a href="#">Giving Feedback</a>
-          <li><a href="#">Team Insights</a>
-          <li><a href="#">Analytics &amp; Reports</a>
+          <li ng-repeat="route in pitpat.router" ng-class="pitpat.currentRoute( '{{ route.route }}', 'active' )">
+            <a href="#{{ route.route }}">{{ route.title }}</a>
         </ul>
       </aside>
     </div>

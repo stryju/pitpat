@@ -7,11 +7,37 @@ define([
 ], function ( dashboardController, dashboardTemplate ) {
   'use strict';
 
-  return {
-    '/': {
+  return [
+    {
+      route      : '/dashboard',
       controller : dashboardController,
       template   : dashboardTemplate,
-      title      : 'Dashboard'
+      title      : 'Dashboard',
+      name       : 'Dashboard'
+    },
+
+    {
+      route : '/my-performance',
+      title : 'My Performance',
+      name  : 'MyPerformance'
+    },
+
+    {
+      route : '/giving-feedback',
+      title : 'Giving Feedback',
+      name  : 'GivingFeedback'
+    },
+
+    {
+      route : '/team-insights',
+      title : 'Team Insights',
+      name  : 'TeamInsights'
+    },
+
+    {
+      route : '/analytics-reports',
+      title : 'Analytics & Reports',
+      name  : 'AnalyticsAndReports'
     }
-  };
+  ];
 });
