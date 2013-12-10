@@ -3,7 +3,7 @@
   console: false
 */
 define([
-  '_router'
+  'router'
 ], function ( router ) {
   'use strict';
 
@@ -11,8 +11,9 @@ define([
     '$scope',
     '$http',
     '$location',
+    'todosFactory',
 
-    function ( $scope, $http, $location ) {
+    function ( $scope, $http, $location, todosFactory ) {
       var app = this;
 
       app.todos  = [];
@@ -20,17 +21,19 @@ define([
 
       $http.get( '/data/user.json' )
         .success( function ( data ) {
+          console.log( 'got user' );
           app.user = data;
         });
 
-      $http.get( '/data/todos.json' )
+      todosFactory
         .success( function ( data ) {
+          console.log( 'got todos' );
           app.todos = data;
         });
 
       app.addTodo = function ( todo ) {
         console.log( 'adding todo', todo );
-        app.todos.push( todo );
+        app.todos.unshift( todo );
       };
 
       app.currentRoute = function( path, klass ) {

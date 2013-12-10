@@ -5,19 +5,40 @@
   height: 40px;
 }
 
-.todos-list :checked {
-  + .todo-label {
-    text-decoration: line-through;
+.todos {
+  padding: .25em;
+}
+
+.todos-list {
+  margin: 0;
+
+  > li {
+    list-style: none;
   }
 
-  ~ .label {
-    opacity: .35;
-    @include transition( opacity 1.5s );
+  label {
+    margin: 0;
+  }
+
+  input[type="checkbox"] {
+    margin: 0 0 .5rem;
+  }
+
+  :checked {
+    + .todo-label {
+      text-decoration: line-through;
+    }
+
+    ~ .label {
+      opacity: .35;
+      @include transition( opacity 1.5s );
+    }
   }
 }
 
 main {
   padding: 1em;
+  min-height: 20em;
 }
 
 body {

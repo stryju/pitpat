@@ -5,12 +5,15 @@
 define([
   'lodash',
   'angular',
-  '_router',
+  'router',
+
+  // modules
   'angular.route',
   'angular.kendo-ui',
-  '_controllers',
-  '_directives',
-  '_filters'
+  'modules/factories',
+  'modules/controllers',
+  'modules/directives',
+  'modules/filters'
 ], function( _, ng, router ){
   'use strict';
 
@@ -19,6 +22,7 @@ define([
     .module( 'pitpat', [
       'ngRoute',
       'kendo.directives',
+      'factories',
       'controllers',
       'directives',
       'filters'

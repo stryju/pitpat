@@ -5,7 +5,7 @@ define([
   'lodash',
   'angular',
   'controllers/pitpat',
-  '_router'
+  'router'
 ], function ( _, ng, pitpat, router ) {
   'use strict';
 

@@ -18,10 +18,10 @@ define( function () {
                          ( Math.abs( days ) === 1 ? 's' : '' );
 
         if ( delta <= 0 ) {
-          return 'deadline met ' + daysString + ' ago';
+          return '' + daysString + ' ago!';
         }
 
-        return 'deadline in ' + daysString;
+        return '' + daysString + ' to go';
       } catch (e) {}
 
       console.warn( 'parsing date string failed', expiryDate );

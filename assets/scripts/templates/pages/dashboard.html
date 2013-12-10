@@ -1,17 +1,43 @@
 <alerts alerts="alerts"></alerts>
 
 <div class="row">
-  <div class="column large-4">
+  <div class="column large-6">
     <h1>
       Welcome back, {{ pitpat.user.name }}!
     </h1>
+
+    <p>Here's what's new:</p>
+
+    <ul>
+      <li>3 new todos
+      <li>1 invitation for <a href="#/feedback">feedback</a>
+    </ul>
+  </div>
+  <div class="column large-6">
+    <div kendo-chart k-options="pie" />
+  </div>
+</div>
+
+<div class="row">
+  <div class="column large-8 small-7">
+    <div class="panel">
+      <h5><small>my</small> notes</h5>
+      <hr>
+      <notes data="notes" />
+    </div>
   </div>
 
-  <todos title="MY TODOS" class="column large-4" todos="pitpat.todos"></todos>
+  <div class="column large-4 small-5">
+    <div class="panel">
+      <h5><small>my</small> TODOs</h5>
+      <hr>
+      <todos data="pitpat.todos" />
+    </div>
+  </div>
+</div>
 
-  <todos title="MY TODOS 2" class="column large-4" todos="pitpat.todos"></todos>
-
-  <div class="column">
+<div class="row">
+  <div class="column ">
     <div class="panel">
       <h5>
         kendo drop down

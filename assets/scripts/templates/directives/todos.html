@@ -1,33 +1,30 @@
 <section class="todos">
-  <div class="panel">
-    <h5>{{title}}</h5>
-    <ul class="todos-list">
-      <li ng-repeat="todo in todos">
-        <label>
-          <input type="checkbox" ng-model="todo.done">
-          <span class="todo-label">
-            {{todo.label}}
-          </span>
-          <span ng-if="todo.expires" class="label right">
-            {{todo.expires|timeLeft}}
-          </span>
-        </label>
-    </ul>
+  <ul class="todos-list">
+    <li ng-repeat="todo in todos">
+      <label>
+        <input type="checkbox" ng-model="todo.done">
+        <span class="todo-label">
+          {{todo.label}}
+        </span>
+        <span ng-if="todo.expires" class="label right">
+          {{todo.expires|timeLeft}}
+        </span>
+      </label>
+  </ul>
 
-    <hr>
+  <hr>
 
-    <form class="row collapse" ng-submit="pitpat.addTodo(newTodo)">
-      <div class="column small-9">
-        <input type="text" ng-model="newTodo.label" placeholder="new todo..." required>
-      </div>
+  <form class="row collapse" ng-submit="pitpat.addTodo(newTodo)">
+    <div class="column small-9">
+      <input type="text" ng-model="newTodo.label" placeholder="new todo..." required>
+    </div>
 
-      <div class="column small-3">
-        <button type="submit" class="button postfix">+</button>
-      </div>
+    <div class="column small-3">
+      <button type="submit" class="button postfix" ng-click="pitpat.addTodo(newTodo)">+</button>
+    </div>
 
-      <div class="column">
-        <input type="text" ng-model="newTodo.expires" placeholder="does it expire?" kendo-date-picker>
-      </div>
-    </form>
-  </div>
+    <div class="column">
+      <input type="text" ng-model="newTodo.expires" placeholder="does it expire?" kendo-date-picker>
+    </div>
+  </form>
 </section>

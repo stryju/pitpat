@@ -31,14 +31,25 @@ ng\:form { display: block }
         </section>
       </nav>
 
-      <main ng-view>
-      </main>
+      <main ng-view></main>
 
       <aside class="left-off-canvas-menu">
         <ul class="off-canvas-list">
-          <li ng-repeat="route in pitpat.router" ng-class="pitpat.currentRoute( '{{ route.route }}', 'active' )">
+          <li ng-repeat="route in pitpat.router | filter:{group:'main'} " ng-class="pitpat.currentRoute( '{{ route.route }}', 'active' )">
             <a href="#{{ route.route }}">{{ route.title }}</a>
+
+          <li>
+            <label>{{ pitpat.user.name }}</label>
+          <li ng-repeat="route in pitpat.router | filter:{group:'user'} " ng-class="pitpat.currentRoute( '{{ route.route }}', 'active' )">
+            <a href="#{{ route.route }}">{{ route.title }}</a>
+
+          <li>
+            <label>TODOs</label>
+          <li>
+
         </ul>
+
+        <todos data="pitpat.todos" />
       </aside>
     </div>
   </div>

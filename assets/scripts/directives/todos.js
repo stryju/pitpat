@@ -12,20 +12,22 @@ define([
 
     return {
       restrict   : 'E',
-      // transclude : true,
       replace    : true,
       scope      : {
-        title : '@',
-        todos : '='
+        todos : '=data'
       },
-      controller : function ( $scope ) {
-      //   // $scope.todos = [];
 
-        this.addTodo = function ( todo ) {
-          $scope.todos.push( todo );
-          console.log( $scope.todos );
-        };
-      },
+      controller : [
+        '$scope',
+        function ( $scope ) {
+        //   // $scope.todos = [];
+
+          this.addTodo = function ( todo ) {
+            $scope.todos.push( todo );
+            console.log( $scope.todos );
+          };
+        }
+      ],
       template : template
     };
   };
