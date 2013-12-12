@@ -14,13 +14,13 @@
 
   <hr>
 
-  <form class="row collapse" ng-submit="pitpat.addTodo(newTodo)">
+  <form class="row collapse" ng-submit="addTodo(newTodo)">
     <div class="column small-9">
       <input type="text" ng-model="newTodo.label" placeholder="new todo..." required>
     </div>
 
     <div class="column small-3">
-      <button type="submit" class="button postfix" ng-click="pitpat.addTodo(newTodo)">+</button>
+      <button type="submit" class="button postfix" ng-click="addTodo(newTodo)">+</button>
     </div>
 
     <div class="column">

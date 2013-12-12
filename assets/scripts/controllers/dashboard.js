@@ -8,27 +8,23 @@ define( function () {
   return [
     '$scope',
     '$http',
+    'Notes',
 
-    function ( $scope, $http ) {
-      var app = this;
-
-      app.alerts = [];
+    function ( $scope, $http, Notes ) {
+      $scope.alerts  = [];
+      $scope.notes   = [];
 
       $http.get( '/data/alerts.json' )
         .success( function ( data ) {
           console.log( 'got alerts' );
-          app.alerts = data;
+          $scope.alerts = data;
         });
 
-      $http.get( '/data/pie.json' )
-        .success( function ( data ) {
-          console.log( 'got pie' );
-          app.pie = data;
+      Notes.get( '/data/notes.json' )
+        .then( function ( data ) {
+          console.log( 'got notes' );
+          $scope.notes = data;
         });
-
-      // app.addTodo = function ( todo ) {
-      //   app.todos.push( todo );
-      // };
     }
   ];
 });

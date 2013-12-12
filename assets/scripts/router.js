@@ -3,17 +3,19 @@
 */
 define([
   'routes/dashboard',
+  'routes/kendo',
   'routes/my-performance',
   'routes/feedback',
   'routes/team-insights',
   'routes/reports',
   'routes/settings',
   'routes/logout'
-], function ( dashboard, perf, feedback, team, reports, settings, logout ) {
+], function ( dashboard, kendo, perf, feedback, team, reports, settings, logout ) {
   'use strict';
 
   return [
     dashboard,
+    kendo,
     perf,
     feedback,
     team,

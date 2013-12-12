@@ -11,13 +11,13 @@ define([
     '$scope',
     '$http',
     '$location',
-    'todosFactory',
+    'Todos',
 
-    function ( $scope, $http, $location, todosFactory ) {
+    function ( $scope, $http, $location, Todos ) {
       var app = this;
 
-      app.todos  = [];
-      app.router = router;
+      $scope.router = router;
+      $scope.todos  = [];
 
       $http.get( '/data/user.json' )
         .success( function ( data ) {
@@ -25,18 +25,19 @@ define([
           app.user = data;
         });
 
-      todosFactory
-        .success( function ( data ) {
+      Todos.get( '/data/todos.json' )
+        .then( function ( data ) {
           console.log( 'got todos' );
-          app.todos = data;
+          $scope.todos = data;
         });
 
-      app.addTodo = function ( todo ) {
-        console.log( 'adding todo', todo );
-        app.todos.unshift( todo );
+      $scope.addTodo = Todos.add;
+
+      $scope.addTodo = function ( foo ) {
+        console.log( foo );
       };
 
-      app.currentRoute = function( path, klass ) {
+      $scope.currentRoute = function( path, klass ) {
         if ( $location.path().substr( 0, path.length ) === path) {
           return klass;
         }

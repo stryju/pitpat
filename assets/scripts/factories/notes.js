@@ -9,23 +9,23 @@ define( function () {
     '$http',
 
     function ( $http ) {
-      var todos = [];
+      var notes = [];
 
       return {
         get : function ( url ) {
-          console.log( '%cfetching todos', 'color:#69c' );
+          console.log( '%cfetching notes', 'color:#69c' );
 
           return $http
             .get( url )
             .then( function ( response ) {
-              todos = response.data;
+              notes = response.data;
 
-              return todos;
+              return notes;
             });
         },
 
         add : function ( todo ) {
-          return todos.push( todo );
+          return notes.push( todo );
         }
       };
     }

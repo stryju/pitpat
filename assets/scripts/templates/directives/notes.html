@@ -1,0 +1,7 @@
+<section class="notes">
+  <ul class="notes-list">
+    <li ng-repeat="note in notes">
+      <h5>{{ note.timestamp|date }}</h5>
+      <p>{{ note.content }}</p>
+  </ul>
+</section>

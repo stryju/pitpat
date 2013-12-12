@@ -35,12 +35,12 @@ ng\:form { display: block }
 
       <aside class="left-off-canvas-menu">
         <ul class="off-canvas-list">
-          <li ng-repeat="route in pitpat.router | filter:{group:'main'} " ng-class="pitpat.currentRoute( '{{ route.route }}', 'active' )">
+          <li ng-repeat="route in router | filter:{group:'main'} " ng-class="currentRoute( '{{ route.route }}', 'active' )">
             <a href="#{{ route.route }}">{{ route.title }}</a>
 
           <li>
             <label>{{ pitpat.user.name }}</label>
-          <li ng-repeat="route in pitpat.router | filter:{group:'user'} " ng-class="pitpat.currentRoute( '{{ route.route }}', 'active' )">
+          <li ng-repeat="route in router | filter:{group:'user'} " ng-class="currentRoute( '{{ route.route }}', 'active' )">
             <a href="#{{ route.route }}">{{ route.title }}</a>
 
           <li>
@@ -49,7 +49,7 @@ ng\:form { display: block }
 
         </ul>
 
-        <todos data="pitpat.todos" />
+        <todos data="todos" />
       </aside>
     </div>
   </div>

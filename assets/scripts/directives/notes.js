@@ -3,26 +3,26 @@
   console: false
 */
 define([
-  'text!templates/directives/todos.html'
+  'text!templates/directives/notes.html'
 ], function ( template ) {
   'use strict';
 
   return function () {
-    console.log( 'init todos directive' );
+    console.log( 'init notes directive' );
 
     return {
       restrict   : 'E',
       replace    : true,
       scope      : {
-        todos : '=data'
+        notes : '=data'
       },
 
       controller : [
         '$scope',
-        'Todos',
+        'Notes',
 
-        function ( $scope, Todos ) {
-          $scope.addTodo = Todos.add;
+        function ( $scope, Notes ) {
+          $scope.addTodo = Notes.add;
         }
       ],
       template : template

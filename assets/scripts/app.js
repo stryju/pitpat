@@ -10,7 +10,8 @@ define([
   // modules
   'angular.route',
   'angular.kendo-ui',
-  'modules/factories',
+
+  'modules/services',
   'modules/controllers',
   'modules/directives',
   'modules/filters'
@@ -22,7 +23,7 @@ define([
     .module( 'pitpat', [
       'ngRoute',
       'kendo.directives',
-      'factories',
+      'services',
       'controllers',
       'directives',
       'filters'

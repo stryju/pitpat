@@ -24,7 +24,8 @@ require.config({
     },
 
     'kendo-ui' : {
-      deps : [
+      exports : 'kendo',
+      deps    : [
         'jquery'
       ]
     },
