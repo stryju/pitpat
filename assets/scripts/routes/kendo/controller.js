@@ -11,11 +11,6 @@ define([
     '$scope',
 
     function ( $scope ) {
-      $scope.pieData = new kendo.data.DataSource({
-        transport: {
-          read: '/data/pieData.json'
-        }
-      });
 
       $scope.dropdown = {
         dataSource: {
@@ -28,7 +23,32 @@ define([
         optionLabel: 'Select A Thing'
       };
 
-      $scope.products = new kendo.data.DataSource({
+      $scope.grid = {
+        selectable : 'row',
+        pageable   : {
+          refresh   : true,
+          pageSizes : true
+        },
+        columns    : [
+          {
+            field : 'ProductName',
+            title : 'Name'
+          },
+          {
+            field : 'Supplier.SupplierName',
+            title : 'Supplier'
+          },
+          {
+            field : 'Category.CategoryName',
+            title : 'Category'
+          }
+        ],
+        sortable   : true,
+        groupable  : true,
+        filterable : true
+      };
+
+      $scope.gridData = new kendo.data.DataSource({
         transport: {
           read: '/data/products.json'
         },
@@ -36,57 +56,38 @@ define([
       });
 
       $scope.pie =({
-          title: {
-            position: "bottom",
-            text: "Share of Internet Population Growth"
+          title : {
+            position : 'bottom',
+            text     : 'Share of Internet Population Growth'
           },
-          legend: {
-            visible: false
+          legend : {
+            visible : false
           },
-          chartArea: {
-            background: ""
-          },
-          seriesDefaults: {
+          seriesDefaults : {
             labels: {
-              visible: true,
-              background: "transparent",
-              template: "#= category #: #= value#%"
+              visible    : true,
+              background : 'transparent',
+              template   : '#= category #: #= value#%'
             }
           },
-          series: [{
-            type: "pie",
-            startAngle: 150,
-            data: [{
-              category: "Asia",
-              value: 53.8,
-              color: "#9de219"
-            },{
-              category: "Europe",
-              value: 16.1,
-              color: "#90cc38"
-            },{
-              category: "Latin America",
-              value: 11.3,
-              color: "#068c35"
-            },{
-              category: "Africa",
-              value: 9.6,
-              color: "#006634"
-            },{
-              category: "Middle East",
-              value: 5.2,
-              color: "#004d38"
-            },{
-              category: "North America",
-              value: 3.6,
-              color: "#033939"
-            }]
-          }],
-          tooltip: {
-            visible: true,
-            format: "{0}%"
+          series : [
+            {
+              type       : 'pie',
+              startAngle : 150,
+              field      : 'value'
+            }
+          ],
+          tooltip : {
+            visible : true,
+            format  : '{0}%'
           }
         });
+
+      $scope.pieData = new kendo.data.DataSource({
+        transport: {
+          read: '/data/pieData.json'
+        }
+      });
     }
   ];
 });
