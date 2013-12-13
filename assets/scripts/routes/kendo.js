@@ -2,15 +2,15 @@
   define: false
 */
 define([
-  'controllers/kendo',
-  'text!templates/pages/kendo.html'
-], function ( kendoController, kendoTemplate ) {
+  './kendo/controller',
+  'text!./kendo/template.html'
+], function ( controller, template ) {
   'use strict';
 
   return {
     route      : '/kendo',
-    controller : kendoController,
-    template   : kendoTemplate,
+    controller : controller,
+    template   : template,
     title      : 'kendo',
     name       : 'kendo',
     group      : 'main'

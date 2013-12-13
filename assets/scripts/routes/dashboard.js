@@ -2,15 +2,15 @@
   define: false
 */
 define([
-  'controllers/dashboard',
-  'text!templates/pages/dashboard.html'
-], function ( dashboardController, dashboardTemplate ) {
+  './dashboard/controller',
+  'text!./dashboard/template.html'
+], function ( controller, template ) {
   'use strict';
 
   return {
     route      : '/dashboard',
-    controller : dashboardController,
-    template   : dashboardTemplate,
+    controller : controller,
+    template   : template,
     title      : 'Dashboard',
     name       : 'Dashboard',
     group      : 'main'

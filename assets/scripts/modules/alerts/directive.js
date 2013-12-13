@@ -3,7 +3,7 @@
   console: false
 */
 define([
-  'text!templates/directives/alert.html'
+  'text!./template.html'
 ], function ( template ) {
   'use strict';
 

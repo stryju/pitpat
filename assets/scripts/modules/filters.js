@@ -3,7 +3,7 @@
 */
 define([
   'angular',
-  'filters/time-left'
+  './filters/time-left'
 ], function ( ng, timeLeft ) {
   'use strict';
 

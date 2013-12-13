@@ -3,7 +3,7 @@
   console: false
 */
 define([
-  'text!templates/directives/todos.html'
+  'text!./template.html'
 ], function ( template ) {
   'use strict';
 
@@ -19,7 +19,7 @@ define([
 
       controller : [
         '$scope',
-        'Todos',
+        'Todos.service',
 
         function ( $scope, Todos ) {
           $scope.addTodo = Todos.add;

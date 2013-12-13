@@ -11,9 +11,12 @@ define([
   'angular.route',
   'angular.kendo-ui',
 
-  'modules/services',
   'modules/controllers',
-  'modules/directives',
+  'modules/todos',
+  'modules/alerts',
+  'modules/notes',
+  // 'modules/services',
+  // 'modules/directives',
   'modules/filters'
 ], function( _, ng, router ){
   'use strict';
@@ -23,9 +26,12 @@ define([
     .module( 'pitpat', [
       'ngRoute',
       'kendo.directives',
-      'services',
+      // 'services',
       'controllers',
-      'directives',
+      // 'directives',
+      'Todos',
+      'Notes',
+      'Alerts',
       'filters'
     ])
     // setup routing

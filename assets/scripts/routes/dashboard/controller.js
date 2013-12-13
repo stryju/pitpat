@@ -7,15 +7,15 @@ define( function () {
 
   return [
     '$scope',
-    '$http',
-    'Notes',
+    'Alerts.service',
+    'Notes.service',
 
-    function ( $scope, $http, Notes ) {
+    function ( $scope, Alerts, Notes ) {
       $scope.alerts  = [];
       $scope.notes   = [];
 
-      $http.get( '/data/alerts.json' )
-        .success( function ( data ) {
+      Alerts.get( '/data/alerts.json' )
+        .then( function ( data ) {
           console.log( 'got alerts' );
           $scope.alerts = data;
         });
