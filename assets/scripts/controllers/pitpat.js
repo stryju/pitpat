@@ -11,7 +11,7 @@ define([
     '$scope',
     '$http',
     '$location',
-    'Todos',
+    'Todos.service',
 
     function ( $scope, $http, $location, Todos ) {
       var app = this;
@@ -31,9 +31,7 @@ define([
           $scope.todos = data;
         });
 
-      $scope.addTodo = Todos.add;
-
-      $scope.addTodo = function ( foo ) {
+      $scope.foo = function ( foo ) {
         console.log( foo );
       };
 

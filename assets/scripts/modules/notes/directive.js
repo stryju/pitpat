@@ -3,8 +3,9 @@
   console: false
 */
 define([
+  './controller',
   'text!./template.html'
-], function ( template ) {
+], function ( controller, template ) {
   'use strict';
 
   return function () {
@@ -17,14 +18,7 @@ define([
         notes : '=data'
       },
 
-      controller : [
-        '$scope',
-        'Notes.service',
-
-        function ( $scope, Notes ) {
-          $scope.addNote = Notes.add;
-        }
-      ],
+      controller : controller,
       template : template
     };
   };
