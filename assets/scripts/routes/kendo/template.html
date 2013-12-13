@@ -5,21 +5,91 @@
     </h1>
 
     <p>take a look at all those kendu-ui goodies!</p>
+
+    <hr>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column large-6">
+    <h2>
+      Dropdown
+    </h2>
+
+    <hr>
+
+    <p>
+      <select kendo-drop-down-list k-options="dropdown" ng-model="dropdownSelection"></select>
+      selected option: <span class="label" ng-if="dropdownSelection">{{ dropdownSelection }}</span>
+    </p>
+  </div>
+
+  <div class="column large-6">
+    <h2>
+      DataVis
+    </h2>
+
+    <hr>
+
+    <h3>
+      pie chart
+    </h3>
+
+    <div kendo-chart k-options="pie" k-data-source="pieData" />
+
+    <pre>
+      {{ pie }}
+    </pre>
+
+    <h3>
+      gauge
+    </h3>
+
+    <div kendo-radial-gauge ng-model="value"></div>
+    <input class="gauge-slider" kendo-slider k-min="0" k-max="100" k-large-step="20" k-tick-placement="'none'" ng-model="value">
+
+
+    <!-- <div kendo-window="">New Angular Kendo UI Plunk</div> -->
   </div>
 </div>
 
 <div class="row">
   <div class="column">
     <h2>
-      Hey, {{ pitpat.user.name }}!
+      Data Grid
     </h2>
 
-    <p>take a look at all those kendu-ui goodies!</p>
+    <hr>
 
-    <div kendo-chart k-options="pie" />
-    <div kendo-chart k-options="pie" k-data-source="pieData" />
-    <div kendo-chart k-options="pie" k-data-source="pieS" />
-    <div kendo-chart k-options="pie" id="testPie" k-data-source="pieS" />
-    <div kendo-window="">New Angular Kendo UI Plunk</div>
+    <div class="row">
+      <div class="column large-8">
+        <div kendo-grid
+          k-data-source="products"
+          k-selectable="'row'"
+          k-pageable='{ "refresh": true, "pageSizes": true }'
+          k-columns='[{ "field": "ProductName", "title": "Name"},
+                      { "field": "Supplier.SupplierName", "title": "Supplier"},
+                      { "field": "Category.CategoryName", "title": "Category" }]'
+          k-sortable="true"
+          k-groupable="true"
+          k-filterable="true"
+          k-on-change="selectedItem = data" ></div>
+      </div>
+      <div class="column large-4" ng-if="selectedItem.ProductName">
+        <h3>
+          {{selectedItem.ProductName}}
+          <small>(Product ID: {{selectedItem.ProductID}})</small>
+        </h3>
+        <hr>
+        <dl>
+          <dt>Quantity in stock:
+          <dd>{{selectedItem.UnitsInStock}}
+          <dt>Price per unit:
+          <dd>{{selectedItem.UnitPrice | currency}}
+          <dt>Value of stock:
+          <dd>{{selectedItem.UnitsInStock * selectedItem.UnitPrice | currency}}
+        </dl>
+      </div>
+    </div>
   </div>
 </div>

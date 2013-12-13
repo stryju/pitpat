@@ -10,11 +10,18 @@ define( function () {
     'Todos.service',
 
     function ( $scope, Todos ) {
-      $scope.addTodo = function ( todo ) {
+
+      function addTodo( todo ) {
         Todos.add( todo );
-        // $scope.newTodoForm.$setPristine();
         $scope.newTodo = {};
-      };
+      }
+
+      function removeTodo( todo ) {
+        Todos.remove( todo );
+      }
+
+      $scope.addTodo = addTodo;
+      $scope.removeTodo = removeTodo;
     }
   ];
 });

@@ -26,6 +26,16 @@ define( function () {
 
         add : function ( todo ) {
           return todos.push( todo );
+        },
+
+        remove : function ( todo ) {
+          var index = todos.indexOf( todo );
+
+          console.log( todos, todo, index );
+
+          if ( index >= 0 ) {
+            todos.splice( index, 1 );
+          }
         }
       };
     }

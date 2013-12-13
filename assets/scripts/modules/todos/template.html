@@ -6,6 +6,7 @@
         <span class="todo-label">
           {{todo.label}}
         </span>
+        <a class="tiny label alert" ng-click="removeTodo(todo)">x</a>
         <span ng-if="todo.expires" class="label right">
           {{todo.expires|timeLeft}}
         </span>
