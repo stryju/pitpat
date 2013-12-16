@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "author": "tomasz stryjewski",
   "scripts": {
-    "start" : "grunt"
+    "start" : "npm i && bower install && grunt"
   },
+  "private" : true,
   "devDependencies": {
     "grunt-contrib-copy": "~0.4.1",
     "grunt-contrib-compass": "~0.6.0",
