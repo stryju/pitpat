@@ -1,9 +1,6 @@
 @import 'compass/css3';
 @import 'foundation/components/global';
 
-.notes {
-
-}
 
 main {
   padding: 1em;
@@ -30,6 +27,7 @@ table {
 }
 
 @import 'modules/todos';
+@import 'modules/notes';
 
 
 .title {

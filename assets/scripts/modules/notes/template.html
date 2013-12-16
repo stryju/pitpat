@@ -12,8 +12,8 @@
   <hr>
 
   <ul class="notes-list">
-    <li ng-repeat="note in notes">
-      <h5>{{ note.timestamp|date }}</h5>
-      <p>{{ note.content }}</p>
+    <li ng-repeat="note in notes | orderBy:'-timestamp' | limitTo:3 ">
+      <h5>{{ note.timestamp|date:'EEEE, dd/MM/yyyy @ H:mm' }}</h5>
+      <p ng-bind-html="note.content | hashtags"></p>
   </ul>
 </section>

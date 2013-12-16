@@ -24,8 +24,8 @@ define( function () {
             });
         },
 
-        add : function ( todo ) {
-          return notes.push( todo );
+        add : function ( note ) {
+          return notes.push( note );
         }
       };
     }

@@ -9,6 +9,7 @@ define([
 
   // modules
   'angular.route',
+  'angular.sanitize',
   'angular.kendo-ui',
 
   'modules/controllers',
@@ -25,6 +26,7 @@ define([
     // define module with dependencies for deferred loading
     .module( 'pitpat', [
       'ngRoute',
+      'ngSanitize',
       'kendo.directives',
       // 'services',
       'controllers',

@@ -3,10 +3,12 @@
 */
 define([
   'angular',
-  './filters/time-left'
-], function ( ng, timeLeft ) {
+  './filters/time-left',
+  './filters/hashtags'
+], function ( ng, timeLeft, hashtags ) {
   'use strict';
 
   return ng.module( 'filters', [] )
-    .filter( 'timeLeft', timeLeft );
+    .filter( 'timeLeft', timeLeft )
+    .filter( 'hashtags', hashtags );
 });

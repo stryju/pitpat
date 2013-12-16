@@ -23,6 +23,12 @@ require.config({
       ]
     },
 
+    'angular.sanitize' : {
+      deps : [
+        'angular'
+      ]
+    },
+
     'kendo-ui' : {
       exports : 'kendo',
       deps    : [
@@ -48,6 +54,7 @@ require.config({
   paths : {
     angular            : 'vendor/angular',
     'angular.route'    : 'vendor/angular-route',
+    'angular.sanitize' : 'vendor/angular-sanitize',
     'angular.kendo-ui' : 'vendor/angular-kendo',
     foundation         : 'vendor/foundation',
     jquery             : 'vendor/jquery',

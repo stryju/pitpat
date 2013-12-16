@@ -6,6 +6,7 @@
     "angular": "~1",
     "lodash": ">=2.4.0",
     "angular-route": "*",
+    "angular-sanitize": "*",
     "requirejs": "~2.1",
     "jquery": "*",
     "foundation": ">=5.0.0",

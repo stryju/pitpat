@@ -9,7 +9,22 @@ define( function () {
     'Notes.service',
 
     function ( $scope, Notes ) {
-      $scope.addNote = Notes.add;
+
+      function addNote( note ) {
+        Notes.add({
+          content   : note,
+          timestamp : new Date()
+        });
+
+        $scope.newNote = '';
+      }
+
+      function removeNote( note ) {
+        Notes.remove( note );
+      }
+
+      $scope.addNote = addNote;
+      $scope.removeNote = removeNote;
     }
   ];
 });

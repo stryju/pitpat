@@ -21,6 +21,7 @@ module.exports = function ( grunt ) {
           'foundation/js/foundation.*',
           'angular/angular.*',
           'angular-route/angular-route.*',
+          'angular-sanitize/angular-sanitize.*',
           'angular-kendo-ui/build/angular-kendo.*'
         ],
         dest    : '<%= dirs.src %>/scripts/vendor'
