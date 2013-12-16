@@ -28,30 +28,47 @@ define([
           $scope.notes = data;
         });
 
-      $scope.donut = ({
-          title : {
-            text     : 'What is you favourite sport?',
-            position : 'bottom'
+      $scope.donut = {
+        title : {
+          text     : 'What is you favourite sport?',
+          position : 'bottom'
+        },
+        legend : {
+          visible : false
+        },
+        seriesDefaults : {
+          type       : 'donut',
+          overlay    : {
+            gradient : 'none'
           },
-          legend : {
+          startAngle : 135,
+          labels     : {
             visible : false
-          },
-          seriesDefaults : {
-            type       : 'donut',
-            overlay    : {
-              gradient : 'none'
-            },
-            startAngle : 90,
-            field      : 'value',
-            labels     : {
-              visible : false
-            }
-          },
-          tooltip : {
-            visible  : true,
-            template : '#= category # - #= kendo.format(\'{0:P}\', percentage) #'
           }
-        });
+        },
+        series : [
+          {
+            field : 'value[0]',
+            name  : '2010'
+          },
+          {
+            field : 'value[1]',
+            name  : '2011'
+          },
+          {
+            field : 'value[2]',
+            name  : '2012'
+          },
+          {
+            field : 'value[3]',
+            name  : '2013'
+          }
+        ],
+        tooltip : {
+          visible  : true,
+          template : '#= category # (#= series.name #):\n#= kendo.format(\'{0:P}\', percentage) #%'
+        }
+      };
 
       $scope.donutData = new kendo.data.DataSource({
         transport: {

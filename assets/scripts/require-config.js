@@ -51,10 +51,7 @@ require.config({
     'angular.kendo-ui' : 'vendor/angular-kendo',
     foundation         : 'vendor/foundation',
     jquery             : 'vendor/jquery',
-    'kendo-ui'         : [
-      'http://cdn.kendostatic.com/2013.1.319/js/kendo.all.min',
-      'vendor/kendo.web.min'
-    ],
+    'kendo-ui'         : 'http://cdn.kendostatic.com/2013.3.1119/js/kendo.all.min',
     lodash             : 'vendor/lodash'
   }
 });

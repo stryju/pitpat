@@ -47,6 +47,8 @@
       DataVis
     </h2>
 
+    <hr>
+
     <div class="row">
       <div class="column large-6">
         <h3>
@@ -56,6 +58,8 @@
         <div kendo-chart k-options="pie" k-data-source="pieData" />
       </div>
 
+      <hr class="hide-for-large-up">
+
       <div class="column large-6">
         <h3>
           gauge
@@ -64,8 +68,35 @@
         <div kendo-radial-gauge ng-model="value"></div>
         <input class="gauge-slider" kendo-slider k-min="0" k-max="100" k-large-step="20" k-tick-placement="'none'" ng-model="value">
       </div>
-    </div>
 
+      <hr>
+
+      <div class="column large-6">
+        <h3>
+          funnel chart
+        </h3>
+
+        <div kendo-chart k-options="funnel" k-data-source="funnelData" />
+      </div>
+
+      <hr class="hide-for-large-up">
+
+      <div class="column large-6">
+        <h3>
+          polar chart
+        </h3>
+
+        <div kendo-chart k-options="polar" no-k-data-source="polarData" />
+      </div>
+
+      <hr>
+
+      <div class="column">
+        <h3>
+          line chart
+        </h3>
+        <div kendo-chart k-options="lineChart" k-data-source="lineChartData" />
+    </div>
 
   </div>
 </div>
@@ -83,5 +114,24 @@
       selected option: <span class="label" ng-if="dropdownSelection">{{ dropdownSelection }}</span>
     </p>
     <!-- <div kendo-window="">New Angular Kendo UI Plunk</div> -->
+  </div>
+</div>
+
+<hr>
+
+<div class="row">
+  <div class="column">
+    <h2>
+      Scheduler
+    </h2>
+
+    <div kendo-scheduler k-options="scheduler" />
+  </div>
+</div>
+
+<hr>
+<div class="row">
+  <div class="column">
+    <p>... and many more :)</p>
   </div>
 </div>

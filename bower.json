@@ -9,7 +9,6 @@
     "requirejs": "~2.1",
     "jquery": "*",
     "foundation": ">=5.0.0",
-    "kendo-ui": "*",
     "angular-kendo-ui": "*"
   },
   "resolutions": {

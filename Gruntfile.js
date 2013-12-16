@@ -21,18 +21,17 @@ module.exports = function ( grunt ) {
           'foundation/js/foundation.*',
           'angular/angular.*',
           'angular-route/angular-route.*',
-          'kendo-ui/js/kendo.web.*',
           'angular-kendo-ui/build/angular-kendo.*'
         ],
         dest    : '<%= dirs.src %>/scripts/vendor'
       },
 
-      kendo_styles : {
-        expand  : true,
-        cwd     : '<%= dirs.bower %>/kendo-ui/styles',
-        src     : '**/*.*',
-        dest    : '<%= dirs.dist %>/styles/kendo'
-      },
+      // kendo_styles : {
+      //   expand  : true,
+      //   cwd     : '<%= dirs.bower %>/kendo-ui/styles',
+      //   src     : '**/*.*',
+      //   dest    : '<%= dirs.dist %>/styles/kendo'
+      // },
 
       images : {
         expand : true,
