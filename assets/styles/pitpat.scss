@@ -1,39 +1,8 @@
 @import 'compass/css3';
+@import 'foundation/components/global';
 
-.thumb-size {
-  width: 40px;
-  height: 40px;
-}
+.notes {
 
-.todos {
-  padding: .25em;
-}
-
-.todos-list {
-  margin: 0;
-
-  > li {
-    list-style: none;
-  }
-
-  label {
-    margin: 0;
-  }
-
-  input[type="checkbox"] {
-    margin: 0 0 .5rem;
-  }
-
-  :checked {
-    + .todo-label {
-      text-decoration: line-through;
-    }
-
-    ~ .label {
-      opacity: .35;
-      @include transition( opacity 1.5s );
-    }
-  }
 }
 
 main {
@@ -54,9 +23,23 @@ table {
     margin-bottom: 0px!important;
 }
 
-
 .off-canvas-list {
   .active {
-    background: #008CBA;
+    background: $primary-color;
+  }
+}
+
+@import 'modules/todos';
+
+
+.title {
+  -webkit-perspective: 800;
+
+  > span {
+    @include transform( rotate3d( 0, 1, 0, 180deg ) );
+
+    &:hover {
+      @include transform( rotate3d( 0, 1, 0, 0deg ) );
+    }
   }
 }

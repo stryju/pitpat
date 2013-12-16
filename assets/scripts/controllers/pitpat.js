@@ -14,7 +14,8 @@ define([
     'Todos.service',
 
     function ( $scope, $http, $location, Todos ) {
-      var app = this;
+      var app   = this;
+      var title = document.title;
 
       $scope.router = router;
       $scope.todos  = [];
@@ -35,8 +36,9 @@ define([
         console.log( foo );
       };
 
-      $scope.currentRoute = function( path, klass ) {
-        if ( $location.path().substr( 0, path.length ) === path) {
+      $scope.currentRoute = function( route, klass ) {
+        if ( $location.path().substr( 0, route.route.length ) === route.route ) {
+          document.title = route.title + ' ' + title;
           return klass;
         }
 

@@ -1,5 +1,5 @@
 <section class="todos">
-  <ul class="todos-list">
+  <ul class="todos-list" ng-if="todos.length">
     <li ng-repeat="todo in todos">
       <label>
         <input type="checkbox" ng-model="todo.done">
@@ -12,6 +12,10 @@
         </span>
       </label>
   </ul>
+
+  <p class="todos-info" ng-if="! todos.length">
+    no todos! :)
+  </p>
 
   <hr>
 

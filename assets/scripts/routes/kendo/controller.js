@@ -1,6 +1,5 @@
 /* global
-  define: false,
-  console: false
+  define: false
 */
 define([
   'kendo-ui'

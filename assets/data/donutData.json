@@ -1,0 +1,27 @@
+[
+    {
+        "category": "Football",
+        "value": 35,
+        "color": "#008CBA"
+    },
+    {
+        "category": "Basketball",
+        "value": 25,
+        "color" : "#777"
+    },
+    {
+        "category": "Volleyball",
+        "value": 20,
+        "color": "#999"
+    },
+    {
+        "category": "Rugby",
+        "value": 10,
+        "color": "#ccc"
+    },
+    {
+        "category": "Tennis",
+        "value": 10,
+        "color": "#ddd"
+    }
+]

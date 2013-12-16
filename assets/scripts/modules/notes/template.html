@@ -1,4 +1,16 @@
 <section class="notes">
+  <form class="row collapse" ng-submit="addNote(newNote)">
+    <div class="column small-9">
+      <input type="text" ng-model="newNote" placeholder="new note..." required>
+    </div>
+
+    <div class="column small-3">
+      <button type="submit" class="button postfix">+</button>
+    </div>
+  </form>
+
+  <hr>
+
   <ul class="notes-list">
     <li ng-repeat="note in notes">
       <h5>{{ note.timestamp|date }}</h5>

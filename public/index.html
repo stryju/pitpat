@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title></title>
+  <title> - pitpat</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
   <style>
 @charset "UTF-8";
@@ -17,6 +17,7 @@ ng\:form { display: block }
   <link rel="stylesheet" href="styles/pitpat.css">
   <link rel="stylesheet" href="styles/kendo/kendo.common.min.css">
   <link rel="stylesheet" href="styles/kendo/kendo.metro.min.css">
+  <link rel="stylesheet" href="styles/kendo/kendo.dataviz.metroblack.min.css">
   <script data-main="scripts/boot" src="scripts/vendor/require.js"></script>
 
 <body ng-cloak ng-controller="PitPatCtrl as pitpat">
@@ -27,7 +28,7 @@ ng\:form { display: block }
           <a class="left-off-canvas-toggle menu-icon" ><span></span></a>
         </section>
         <section class="middle tab-bar-section">
-          <h1 class="title">PitPat</h1>
+          <h1 class="title"><span>Pit</span>Pat</h1>
         </section>
       </nav>
 
@@ -35,12 +36,12 @@ ng\:form { display: block }
 
       <aside class="left-off-canvas-menu">
         <ul class="off-canvas-list">
-          <li ng-repeat="route in router | filter:{group:'main'} " ng-class="currentRoute( '{{ route.route }}', 'active' )">
+          <li ng-repeat="route in router | filter:{group:'main'} " ng-class="currentRoute( route, 'active' )">
             <a href="#{{ route.route }}">{{ route.title }}</a>
 
           <li>
             <label>{{ pitpat.user.name }}</label>
-          <li ng-repeat="route in router | filter:{group:'user'} " ng-class="currentRoute( '{{ route.route }}', 'active' )">
+          <li ng-repeat="route in router | filter:{group:'user'} " ng-class="currentRoute( route, 'active' )">
             <a href="#{{ route.route }}">{{ route.title }}</a>
 
           <li>
@@ -48,8 +49,9 @@ ng\:form { display: block }
           <li>
 
         </ul>
-
-        <todos data="todos" />
+        <div class="panel">
+          <todos data="todos" />
+        </div>
       </aside>
     </div>
   </div>
