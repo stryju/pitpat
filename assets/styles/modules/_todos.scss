@@ -1,0 +1,43 @@
+.todos {
+  padding: .25em;
+}
+
+.todos-list {
+  margin: 0;
+
+  > li {
+    list-style: none;
+  }
+
+  label {
+    margin: 0;
+  }
+
+  input[type="checkbox"] {
+    margin: 0 0 .5rem;
+  }
+
+  :checked {
+    + .todo-label {
+      text-decoration: line-through;
+    }
+
+    ~ .label {
+      opacity: .35;
+      @include transition( opacity 1.5s );
+    }
+  }
+}
+
+.panel {
+  .todos-info {
+    color: #ccc;
+
+    text-align: center;
+    font-style: italic;
+
+    text-shadow:
+      1px 1px 1px #fff
+    ;
+  }
+}
